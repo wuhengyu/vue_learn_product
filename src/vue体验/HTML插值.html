@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+      {{html}}
+    </div>
+    <div v-html="html">
+    </div>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js">
+    </script>
+    <script>
+      const app = Vue.createApp({
+        data(){
+          return {
+            html: '<h2>我是html</h2> \
+            <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png ">'
+          }
+        }
+      })
+      app.mount('#app')
+    </script>
+  </div>
+</body>
+</html>
