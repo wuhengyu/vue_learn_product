@@ -3,9 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>文本插值</title>
 </head>
 <body>
-  
+  <div id="app">
+      <h1>文本插值{{ title }}</h1>
+       <p><label>变量: </label>{{ title }}</p>
+      <p><label>表达式: </label>{{ 4+5 }}</p>
+      <p><label>三目运算:</label>{{ flag ? 4: 5}}</p>
+      <p><label>一般函数: </label>{{ getName() }}</p>
+      <p><label>匿名函数: </label>{{ (() => 4+5)() }}</p>
+      <p><label>对象: </label>{{ {num:5} }}</p>
+      <p><label>函数对象: </label>{{ getName }}</p>
+  </div>
+  <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js">
+  </script>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return {
+          title: 'Hello Vue!',
+          flag: true,
+          html: '<span>我是html</span>',
+        }
+      },
+      methods: {
+        getName(){
+          return '我是函数'
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
 </body>
 </html>
