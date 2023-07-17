@@ -1,0 +1,23 @@
+<div id="app">
+  <my-button>
+  </my-button>
+  <my-button>
+    my button
+  </my-button>
+  <my-button>
+    <span style="color: red;">
+      my button 2
+    </span>
+  </my-button>
+ <script>
+  const app = Vue.createApp({})
+  app.component('my-button', {
+    template: `
+      <button>
+        <slot>默认内容</slot>
+      </button>
+    `
+  })
+  app.mount('#app')
+ </script>
+</div>
