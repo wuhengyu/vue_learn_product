@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 父组件模板 -->
+<div id="app">
+  <list-item title="todo列表":data="todos"></list-item>
+  <!-- <h1>{{title}}</h1> -->
+</div>
+<script src="https://unpkg.com/vue@3.2.24/dist/vue.global.js"></script>
+<script>
+// 父组件定义
+const App = {
+  data() {
+    return {
+      todos: [
+        "起床",
+        "打扫卫生",
+        "看电视剧",
+        "吃饭",
+        "睡觉"
+      ],
+      title: 'Hello World!'
+    }
+  }
+}
+创建应用
+const app = Vue.createApp(App);
+//子组件定义
+app.comments('list-item', {
+  props: {
+    title: String,
+    data: {
+      type: Array,
+      default: () => [],
+      required: true,
+      validator: value => {
+        return value.length >= 0;
+      }
+    }
+  },
+  template: `
+    <ul>
+    <li v-for="(item, i) in data" :key="i">{{i}}-{{item}}</li>
+      </ul>
+  `
+})
+</script>
+</body>
+</html>
