@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .wrap {
+      border: 1px solid #f66;color: #f66;padding: 10px;position: relative;max-width: 300px;
+    }
+    .header {
+      font-size: 20px;font-weight: bold;color: #333;
+    }
+    .close {
+      position: absolute;right: 10px;top: 10px;
+    }
+  </style>
+  <div id="app">
+    <error-tips>
+      <template v-slot:header>
+        <p>提示</p>
+      </template>
+      <template v-slot:default="slotProps">
+        <p>我的错误是<span>{{slotProps.styles['404']}}</span></p>
+      </template>
+      <template v-slot:footer="{types, sources}">
+        <p>错误来自：{{sources['page']}}-{{types['404']}}</p>
+      </template>
+    </error-tips>
+  </div>
+  <script src="https://unpkg.com/vue@3.2.24/dist/vue.global.js">
+  </script>
+  <script>
+    const app = Vue.createApp({})
+    app.component('error-tips', {
+      data() {
+        return {
+          types: {
+            '404': '页面未找到',
+            '500': '服务器错误'
+          },
+          sources: {
+            system: '系统',
+            page: '页面',
+            console: '控制台'
+          }
+        }
+      },
+      template: `
+        <div class="wrap">
+          <div class="header">
+            <slot name="header">错误</slot>
+            <span class="close">关闭</span>
+          </div>
+
+          <div>
+            <slot: types="types"></slot>
+          </div>
+          <div class="footer">
+            <slot name="footer": types="types": sources="sources">错误来自系统</slot>
+          </div>
+        </div>
+      `
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>
