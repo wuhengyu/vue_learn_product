@@ -3,7 +3,12 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import Header1 from '../components/Header1.vue'
 import Header2 from '../components/Header2.vue'
+import UserCenter from '../views/user-center/index.vue'
 
+
+const UserProfile = () => import('../views/user-center/UserProfile.vue')  
+const UserSettings = () => import('../views/user-center/UserSettings.vue')  
+const NotFound = () => import('../views/NotFound.vued.vue')
 const routes = [
   {
     path: '/',
@@ -32,6 +37,29 @@ const routes = [
     path: '/wuhengyu2',
     name: 'wuhengyu2',
     component: () => import(/* webpackChunkName: "wuhengyu2" */ '../views/WuHengYu2.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound
+  },
+  {
+    path: '/user',
+    name: 'UserCenter',
+    component: UserCenter,
+    redirect: '/user/profile',
+    children: [
+      {
+        name: 'profile',
+        path: 'profile',
+        component: UserProfile,
+      },
+      {
+        name: 'settings',
+        path: 'settings',
+        component: UserSettings,
+      }
+    ]
   }
 ]
 

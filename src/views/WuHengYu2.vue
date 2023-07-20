@@ -17,3 +17,8 @@ export default{
   }
 }
 </script>
+<style>
+.WuHengYu2{
+  font-size: 20px;
+}
+</style>

@@ -1,6 +1,6 @@
 <!-- router-link标签跳转 -->
 <template>
-  <div class="WuHengyu1">
+  <div class="WuHengYu1">
     <h1>wuhengyu1</h1>
   </div>
   <div>
@@ -17,3 +17,8 @@ export default{
   }
 }
 </script>
+<style>
+.WuHengYu1{
+  font-size: 20px;
+}
+</style>
