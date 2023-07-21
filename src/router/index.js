@@ -8,7 +8,7 @@ import UserCenter from '../views/user-center/index.vue'
 
 const UserProfile = () => import('../views/user-center/UserProfile.vue')  
 const UserSettings = () => import('../views/user-center/UserSettings.vue')  
-const NotFound = () => import('../views/NotFound.vued.vue')
+const NotFound = () => import('../views/NotFound.vue')
 const routes = [
   {
     path: '/',

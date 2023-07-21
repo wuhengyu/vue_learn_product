@@ -1,12 +1,15 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/wuhengyu1">点我跳转1</router-link> |
-    <router-link to="/wuhengyu2">点我跳转2</router-link>|
-  </nav>
-  <div>
-    <router-view name="top"></router-view>
+<div id="header">
+  <h1>
+  <router-link to="/">
+    LOGO
+  </router-link>
+  </h1>
+  <div class="avatar">
+    <router-link to="/user">User</router-link>
+  </div>
+</div>
+<div id="main">
     <router-view></router-view>
   </div>
 </template>
@@ -18,38 +21,60 @@ export default {
 </script>
 
 <style>
+html,
+body,
+ul,
+li,
+h1{
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 
-nav {
-  padding: 30px;
-}
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  padding: 0 30px;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: #fff;
+  height: 54px;
 
-nav a {
+}
+#header a{
   font-weight: bold;
-  color: #2c3e50;
-}
+  border-radius: 50%;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
 
-nav a.router-link-exact-active {
-  color: #42b983;
 }
-
-nav {
-  padding: 30px;
+#header .avatar a{
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  background-color: #eee;
+  color: #666;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+#main{
+  height: 100%;
+  padding-top: 54px;
+  box-sizing: border-box;
 }
 </style>

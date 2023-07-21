@@ -20,30 +20,29 @@
 export default {
 }
 </script>
-<style lang="css">
+<style>
 .containter {
   display: flex;
   height: 100%;
 }
 #siderbar {
-  width: 200px;
+  width: 250px;
   height: 100%;
-  background-color: #000;
+  background: #000;
 }
 #siderbar li {
   list-style: none;
-  padding: 0;
-  margin: 0;
 } 
-#sidebar li a {
+#siderbar li a {
   display: block;
-  padding: 10px 20px;
+  height: 40px;
+  line-height: 40px;
   text-decoration: none;
   color: #fff;
-  height: 40px;
 }
-#sidebar li a:router-link-active {
-  background-color: #f47c00;
+  
+#sidebar li a.router-link-active {
+  background: #f47c00;
 } 
 .main-body {
   flex: 1;
