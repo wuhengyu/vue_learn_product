@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
-import Header1 from '../components/Header1.vue'
+// import Header1 from '../components/Header1.vue'
 import Header2 from '../components/Header2.vue'
 import UserCenter from '../views/user-center/index.vue'
 
@@ -10,13 +10,22 @@ const UserProfile = () => import('../views/user-center/UserProfile.vue')
 const UserSettings = () => import('../views/user-center/UserSettings.vue')  
 const NotFound = () => import('../views/NotFound.vue')
 const routes = [
-  {
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   components: {
+  //     default: HomeView,
+  //     top: Header1
+  //   }
+  // },
+    {
     path: '/',
     name: 'home',
-    components: {
-      default: HomeView,
-      top: Header1
-    }
+    meta: {
+      // 需要登录
+      requiresAuth: true
+    },
+    components: HomeView
   },
   {
     path: '/about',
@@ -60,12 +69,35 @@ const routes = [
         component: UserSettings,
       }
     ]
-  }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "login" */ '../views/sign/login.vue'  )
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import(/* webpackChunkName: "login" */ '../views/sign/register.vue'  )
+  },
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token');
+  // 需要登录
+  if (to.meta.requiresAuth && !token) {
+      next({name: 'Login'})
+      // return {name: 'Login'}
+    }
+  else {
+    next()
+}
+  return true
+});
 
 export default router
