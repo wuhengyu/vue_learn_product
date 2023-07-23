@@ -20,3 +20,12 @@ a {
   margin-bottom: 10px;
   color: #000;
 }
+
+.sign_button {
+  border-radius: 20px;
+  width: 290px
+}
+
+.el-input__wrapper {
+  border-radius: 20px
+}

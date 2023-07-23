@@ -42,7 +42,7 @@ export default {
 
         <el-form-item label="">
           <div>
-            <el-button @click="login" type="primary" style="width: 290px"
+            <el-button @click="login" type="primary" class="sign_button"
               >登录</el-button
             >
           </div>

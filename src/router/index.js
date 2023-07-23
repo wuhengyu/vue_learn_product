@@ -80,6 +80,11 @@ const routes = [
     name: 'Register',
     component: () => import(/* webpackChunkName: "login" */ '../views/sign/register.vue'  )
   },
+  {
+    path: '/dialog',
+    name: 'Dialog',
+    component: () => import(/* webpackChunkName: "login" */ '../views/dialog/dialog.vue'  )
+  },
 ]
 
 const router = createRouter({

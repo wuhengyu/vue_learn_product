@@ -29,11 +29,7 @@
 
         <el-form-item label="" class="register-link">
           <div>
-            <el-button
-              class="w100p"
-              type="primary"
-              @click="register"
-              style="width: 290px"
+            <el-button type="primary" @click="register" class="sign_button"
               >注册</el-button
             >
           </div>
