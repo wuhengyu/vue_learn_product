@@ -27,15 +27,14 @@ p {
   margin: 0;
   padding: 0;
 }
-.w100p {
-  width: 100%;
-}
-.txt-r {
-  text-align: right;
-}
+
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.register-link .el-form-item__content {
+  display: flex;
+  justify-content: right;
 }
 </style>

@@ -27,13 +27,20 @@
           </el-input>
         </el-form-item>
 
-        <el-form-item label="">
+        <el-form-item label="" class="register-link">
           <div>
-            <el-button class="w100p" type="primary" @click="register"
+            <el-button
+              class="w100p"
+              type="primary"
+              @click="register"
+              style="width: 290px"
               >注册</el-button
             >
           </div>
-          <div class="txt-r">
+        </el-form-item>
+
+        <el-form-item label="" class="register-link">
+          <div class="register-link__content">
             <router-link to="/login">已有账号，去登录</router-link>
           </div>
         </el-form-item>

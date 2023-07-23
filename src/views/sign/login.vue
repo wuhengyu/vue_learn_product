@@ -42,12 +42,17 @@ export default {
 
         <el-form-item label="">
           <div>
-            <el-button @click="login" type="primary" class="w100p"
+            <el-button @click="login" type="primary" style="width: 290px"
               >登录</el-button
             >
           </div>
-          <div class="txt-r">
-            <router-link to="/register">没有账号?去注册</router-link>
+        </el-form-item>
+
+        <el-form-item label="" class="register-link">
+          <div>
+            <router-link to="/register" class="register-link__content"
+              >没有账号?去注册</router-link
+            >
           </div>
         </el-form-item>
       </el-form>
