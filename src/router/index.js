@@ -78,12 +78,16 @@ const routes = [
   {
     path: '/register',
     name: 'Register',
-    component: () => import(/* webpackChunkName: "login" */ '../views/sign/register.vue'  )
+    component: () => import(/* webpackChunkName: "Register" */ '../views/sign/register.vue'  )
   },
   {
     path: '/dialog',
     name: 'Dialog',
-    component: () => import(/* webpackChunkName: "login" */ '../views/dialog/dialog.vue'  )
+    component: () => import(/* webpackChunkName: "Dialog" */ '../views/dialog/dialog.vue'  )
+  },{
+    path: '/messageBox',
+    name: 'MessageBox',
+    component: () => import(/* webpackChunkName: "MessageBox" */ '../views/messageBox/messageBox.vue'  )
   },
 ]
 
