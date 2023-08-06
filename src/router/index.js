@@ -88,6 +88,39 @@ const routes = [
     path: '/messageBox',
     name: 'MessageBox',
     component: () => import(/* webpackChunkName: "MessageBox" */ '../views/messageBox/messageBox.vue'  )
+  },{
+    path: '/MessageAlert',
+    name: 'MessageAlert',
+    component: () => import(/* webpackChunkName: "MessageAlert" */ '../views/messageBox/MessageAlert.vue'  )
+  },{
+    path: '/MessageConfirm',
+    name: 'MessageConfirm',
+    component: () => import(/* webpackChunkName: "MessageConfirm" */ '../views/messageBox/MessageConfirm.vue'  )
+  },{
+    path: '/MessagePrompt',
+    name: 'MessagePrompt',
+    component: () => import(/* webpackChunkName: "MessagePrompt" */ '../views/messageBox/MessagePrompt.vue'  )
+  },{
+    path: '/MessageBeforeClose',
+    name: 'MessageBeforeClose',
+    component: () => import(/* webpackChunkName: "MessageBeforeClose" */ '../views/messageBox/MessageBeforeClose.vue'  )
+  },{
+    path: '/MessageHTML',
+    name: 'MessageHTML',
+    component: () => import(/* webpackChunkName: "MessageHTML" */ '../views/messageBox/MessageHTML.vue'  )
+  },{
+    path: '/MessageRejectAndCallback',
+    name: 'MessageRejectAndCallback',
+    component: () => import(/* webpackChunkName: "MessageRejectAndCallback" */ '../views/messageBox/MessageRejectAndCallback.vue'  )
+  },
+  {
+    path: '/FourMessagePrompt',
+    name: 'FourMessagePrompt',
+    component: () => import(/* webpackChunkName: "FourMessagePrompt" */ '../views/messageBox/message/FourMessagePrompt.vue'  )
+  },{
+    path: '/FourMessage',
+    name: 'FourMessage',
+    component: () => import(/* webpackChunkName: "FourMessage" */ '../views/messageBox/message/FourMessage.vue'  )
   },
 ]
 
