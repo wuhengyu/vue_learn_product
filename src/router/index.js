@@ -116,7 +116,7 @@ const routes = [
   {
     path: '/FourMessagePrompt',
     name: 'FourMessagePrompt',
-    component: () => import(/* webpackChunkName: "FourMessagePrompt" */ '../views/messageBox/message/FourMessagePrompt.vue'  )
+    component: () => import(/* webpackChunkName: "FourMessagePrompt" */ '../views/messageBox/message/FourMessageBox.vue'  )
   },{
     path: '/FourMessage',
     name: 'FourMessage',
