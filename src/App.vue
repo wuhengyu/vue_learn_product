@@ -112,7 +112,7 @@ export default {
       const hour = date.getHours();
       const min = date.getMinutes();
       const sec = date.getSeconds();
-      return "${year}-${month}-${day} ${hour}:${min}:${sec}";
+      return `${year}-${month}-${day} ${hour}:${min}:${sec}`;
     };
     const formatterOnSale = (row, col) => {
       return row[col.property] ? "是" : "否";
@@ -173,28 +173,12 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  /* color: #2c3e50; */
+  color: #2c3e50;
+  margin-top: 60px;
 }
-html,
-body,
-ul,
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-  padding: 0;
-}
-
-.flex-center {
+.flex {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-}
-
-.register-link .el-form-item__content {
-  display: flex;
-  justify-content: right;
 }
 </style>
