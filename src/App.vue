@@ -99,14 +99,13 @@ export default {
       const min = date.getMinutes();
       const sec = date.getSeconds();
       return `${year}-${month}-${day} ${hour}:${min}:${sec}`;
-      return `${year}-${month}-${day} ${hour}:${min}:${sec}`;
     };
 
     const formatterOnSale = (row, col) => {
       return row[col.property] ? "是" : "否";
     };
 
-    // New Product
+    // 添加新增商品
     const formRef = ref(null);
     const title = ref(null);
     const createVisible = ref(false);
@@ -163,10 +162,10 @@ export default {
       createVisible.value = true;
     };
 
-    // Update Product
+    // 编辑更新
     const onUpdate = (newInfo) => {
       setTimeout(() => {
-        // Simulating API request
+        // 组合式API请求
         const res = {
           code: 200,
           msg: "",
@@ -206,7 +205,7 @@ export default {
     const tableData = ref([]);
     const getTableData = () => {
       setTimeout(() => {
-        // Simulating API request
+        // 组合式API请求
         const res = {
           code: 200,
           msg: "",
